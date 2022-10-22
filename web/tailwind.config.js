@@ -2,7 +2,10 @@
 module.exports = {
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   theme: {
+    fontFamily: {
+      'russo': ['Russo One', 'monospace']
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
