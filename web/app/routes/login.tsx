@@ -13,6 +13,7 @@ export async function loader({ request }: LoaderArgs) {
   return json({});
 }
 
+
 export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
   const email = formData.get("email");
@@ -48,7 +49,7 @@ export async function action({ request }: ActionArgs) {
       { errors: { email: "Invalid email or password", password: null } },
       { status: 400 }
     );
-  }
+  } 
 
   return createUserSession({
     request,
@@ -66,7 +67,7 @@ export const meta: MetaFunction = () => {
 
 export default function LoginPage() {
   const [searchParams] = useSearchParams();
-  const redirectTo = searchParams.get("redirectTo") || "/notes";
+  const redirectTo = searchParams.get("redirectTo") || "/";
   const actionData = useActionData<typeof action>();
   const emailRef = React.useRef<HTMLInputElement>(null);
   const passwordRef = React.useRef<HTMLInputElement>(null);
@@ -177,3 +178,6 @@ export default function LoginPage() {
     </div>
   );
 }
+
+
+
