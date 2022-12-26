@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import NavBar from "./components/nav";
 
 import { getUser } from "./session.server";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
@@ -18,7 +19,7 @@ export const links: LinksFunction = () => {
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Remix Notes",
+  title: "Code Haven",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -36,6 +37,7 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
+        <NavBar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
