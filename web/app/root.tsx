@@ -36,7 +36,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full xl:w-3/5 lg:mx-auto">
+      <body className="h-full w-full lg:w-4/5 xl:w-3/5 lg:mx-auto">
         <NavBar />
         <Outlet />
         <ScrollRestoration />

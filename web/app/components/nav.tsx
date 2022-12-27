@@ -8,6 +8,11 @@ import logo from "../../public/assets/Code_Haven_Logo.png"
 
 const NavBar = () => {
     const user = useOptionalUser();
+    if (user) {
+        var email = user.email;
+        var newStr = email.split("@")[0];
+        
+    }
     return (
         <div className="navbar h-24 bg-base-100 mx-auto">
             <div className="navbar-start">
@@ -36,7 +41,12 @@ const NavBar = () => {
             </div>
             <div className="navbar-end">
                 {user ? (
-                    <Link to="courses" className="btn h-6 w-40 bg-orange-300 border-0">Get Started!</Link>
+                    <div className="menu menu-horizontal px-1 gap-2">
+                        <Link to="/account" className="link hover:text-blue-500 transition duration-300 my-auto text-sm normal-case">
+                            {newStr}
+                        </Link>
+                        <Link to="courses" className="btn h-6 w-40 bg-orange-300 border-0">Get Started!</Link>
+                    </div>
                 ) : (
                     <ul tabIndex={0} className="menu menu-horizontal px-1 gap-2">                     
                         <Link to="login" className="btn w-24 btn-ghost">Log In</Link>
