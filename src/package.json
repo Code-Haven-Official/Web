@@ -67,9 +67,9 @@
     "yaml": "^1.10.2"
   },
   "scripts": {
-    "start": "tailwindcss build -i ./src/tailwind.css -o ./css/tailwind.css --watch",
+    "start": "tailwindcss build -i ./src/tailwind.css -o ./css/tailwind.css --watch & parcel",
     "deploy": "gh-pages -d build",
-    "build": "parcel build src/index.html --d dist"
+    "build": "parcel build"
   },
   "keywords": [],
   "author": "",
